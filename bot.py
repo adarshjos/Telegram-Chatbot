@@ -1,4 +1,4 @@
-import sys
+﻿import sys
 import sqlite3
 import time
 import telepot
@@ -12,7 +12,7 @@ from urllib2 import urlopen
 
 
 bot = telepot.Bot('429545323:AAEj3Pqo3ItuNWGefbJjy4N-lwrqzOseZD0')
-conne = sqlite3.connect('/home/adarsh/academics/Bot/eappan.db',check_same_thread=False)
+conne = sqlite3.connect('/root/eappan.db',check_same_thread=False)
 # conn.execute("CREATE TABLE botocr(fileid varchar(1000),ocrdata varchar(2000))")
 conn = conne.cursor()
 def handle(msg):
@@ -23,7 +23,8 @@ def handle(msg):
 		if content_type == 'photo' :
 
 			print 'photo'
-			idfile=msg['photo'][3]['file_id']
+			length = (len(msg['photo'])-1)
+			idfile=msg['photo'][length]['file_id']
 			#bot.sendPhoto(chat_id,idfile)
 			url = 'https://api.telegram.org/bot429545323:AAEj3Pqo3ItuNWGefbJjy4N-lwrqzOseZD0/getFile?file_id='
 			url=url+str(idfile)

@@ -1,0 +1,8 @@
+Django==1.11.4
+image==1.5.15
+olefile==0.44
+Pillow==4.2.1
+pytesseract==0.1.7
+pytz==2017.2
+telepot==12.3
+urllib3==1.22
